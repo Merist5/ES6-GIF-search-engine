@@ -1,25 +1,27 @@
-Search = React.createClass({
-    getInitialState() {
-        return {
+class Search extends React.Component {
+    constructor(props) {
+      super(props);
+        this.state = {
             searchingText: ''
             };
-    },
-    handleChange: function(event) {
+    }
+
+  handleChange(event) {
     const searchingText = event.target.value;
     this.setState({searchingText: searchingText});
 
     if (searchingText.length > 2) {
       this.props.onSearch(searchingText);
     }
-  },
+  }
 
-  handleKeyUp: function(event) {
+  handleKeyUp(event) {
     if (event.keyCode == 13) {
       this.props.onSearch(this.state.searchingText);
     }
-  },
+  }
 
-  render: function() {
+  render() {
         const styles = {
             fontSize: '1.5em',
             width: '90%',
@@ -33,4 +35,4 @@ Search = React.createClass({
              value={this.state.searchTerm}
             />
   }
-});
+};
