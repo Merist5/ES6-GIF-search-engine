@@ -16,7 +16,7 @@ class Search extends React.Component {
   }
 
   handleKeyUp(event) {
-    if (event.keyCode == 13) {
+    if (event.keyCode === 13) {
       this.props.onSearch(this.state.searchingText);
     }
   }
