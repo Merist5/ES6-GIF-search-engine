@@ -9,7 +9,7 @@ class Gif extends React.Component {
     return this.props.sourceUrl || GIPHY_LOADING_URL;
   }
   render() {
-    var url = this.props.loading ? GIPHY_LOADING_URL : this.props.url;
+    const url = this.props.loading ? GIPHY_LOADING_URL : this.props.url;
 
     return (
       <div style={styles}>

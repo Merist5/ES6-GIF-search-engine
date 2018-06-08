@@ -27,13 +27,13 @@ class App extends React.Component {
     getGif(searchingText) {
         return new Promise (
             function(resolve,reject) {
-                var url = GIPHY_API_URL + '/v1/gifs/random?api_key=' + GIPHY_PUB_KEY + '&tag=' + searchingText;  // 2.
-                var xhr = new XMLHttpRequest();  
+                const url = GIPHY_API_URL + '/v1/gifs/random?api_key=' + GIPHY_PUB_KEY + '&tag=' + searchingText;  // 2.
+                const xhr = new XMLHttpRequest();  
                 xhr.open('GET', url);
                 xhr.onload = function() {
                     if (xhr.status === 200) {
-                        var data = JSON.parse(xhr.responseText).data; 
-                        var gif = {  
+                        const data = JSON.parse(xhr.responseText).data; 
+                        const gif = {  
                             url: data.fixed_width_downsampled_url,
                             sourceUrl: data.url
                         };
